@@ -7,8 +7,6 @@
 #Persistent
 #SingleInstance force
 
-#Hotstring C
-
 #Include %A_ScriptDir%\IME.ahk
 
 SetWorkingDir, %UserProfile%

@@ -12,13 +12,17 @@
 SetWorkingDir, %UserProfile%
 
 
-;; Key remapping
+;; Key mapping {{{
 
-; CapsLock(Eisuu) -> Tab
+; Display desktop w/ Win + E
+#e::
+  Run, explorer %A_Desktop%
+Return
+
+; CapsLock(Eisuu) -> Tab (only for JIS keyboard)
 vkF0sc03A::
   Send, {Tab}
 Return
-
 
 ; Plain text paste (Ctrl + Shift + V)
 ^+v::
@@ -43,22 +47,16 @@ Return
   evclip =
 Return
 
+;}}}
 
-; Application specific
+; Application specific {{{
 
-; Google Chrome {{{
+; Google Chrome
 #IfWinActive ahk_class Chrome_WidgetWin_1
 ^d::^f
 #IfWinActive
+
 ;}}}
-
-
-;; Hot keys
-
-; Win + E
-#e::
-  Run, explorer %A_Desktop%
-Return
 
 
 #Include *i %A_ScriptDir%\my_office.ahk

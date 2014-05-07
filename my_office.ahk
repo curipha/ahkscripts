@@ -3,12 +3,12 @@
 ; / _` | ' \| / / | | ' \  / _ \  _|  _| / _/ -_)
 ; \__,_|_||_|_\_\ |_|_||_| \___/_| |_| |_\__\___|
 
-;; Key remapping
+;; Key mapping {{{
 
 ; Kill F1
 F1::Esc
 
-; exceptions {{{
+; exceptions of killing F1 {{{
 ; SAP GUI
 #IfWinActive ahk_class SAP_FRONTEND_SESSION
 F1::F1
@@ -18,10 +18,11 @@ F1::F1
 #IfWinActive
 ;}}}
 
+;}}}
 
-; Application specific
+; Application specific {{{
 
-; SAP GUI {{{
+; SAP GUI
 #IfWinActive ahk_class SAP_FRONTEND_SESSION
 ; Ctrl + /
 ^/::
@@ -43,9 +44,9 @@ Return
 :?:nxd03::nxd03 RF02D-VKORG=;RF02D-VTWEG=;RF02D-SPART=;
 :?:oxd03::oxd03 RF02D-VKORG=;RF02D-VTWEG=;RF02D-SPART=;
 #IfWinActive
-;}}}
 
-; Notes {{{
+
+; Lotus Notes
 #IfWinActive ahk_class SWT_Window0
 ; Direct assign Shift + -
 ^-::
@@ -57,7 +58,8 @@ Return
 Return
 
 ; Hotstring
-:C1:br::Best regards,{Enter}Taichi
+:C1:br::Best regards,{Enter}Taichi{Enter}
 #IfWinActive
+
 ;}}}
 

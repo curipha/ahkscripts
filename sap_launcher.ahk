@@ -11,20 +11,16 @@
 
 SetWorkingDir, %UserProfile%
 
-user = %A_UserName%
-password =
+IfNotExist, %A_ScriptDir%\sap_launcher.ini.ahk
+{
+  MsgBox, 0x30
+        , Error
+        , Cannot find "sap_launcher.ini.ahk".`nYou have to set up this file correctly.
 
-keymap := { "PR" : { "connect": "PRD/100", "user": user, "language": "EN" }
-;             - Hot key is "PR"
-;             - Sign-in to the system whose SID = "PRD" and client = 100 using the same username as Windows
-;             - Password is used which will be prompt (it stores on memory)
-;             - Session language is "EN" (English)
+  ExitApp
+}
 
-          , "QA" : { "connect": "QAS/200|VA01", "user": "QA", "password": "P@ssw0rd", "language": "JA" } }
-;             - Hot key is "QA"
-;             - Sign-in to the system whose SID = "QAS" and client = 200 using username = "QA" and password = "P@ssw0rd"
-;             - After sign-in, open transaction VA01 immediately
-;             - Session language is "JA" (Japanese)
+#Include %A_ScriptDir%\sap_launcher.ini.ahk
 
 ; Abort {{{
 Abort(msg)

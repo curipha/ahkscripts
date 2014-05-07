@@ -60,3 +60,6 @@ Return
   Run, explorer %A_Desktop%
 Return
 
+
+#Include *i %A_ScriptDir%\my_office.ahk
+

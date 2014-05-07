@@ -3,15 +3,6 @@
 ; / _` | ' \| / / | | ' \  / _ \  _|  _| / _/ -_)
 ; \__,_|_||_|_\_\ |_|_||_| \___/_| |_| |_\__\___|
 
-;; Preferences
-#Persistent
-#SingleInstance force
-
-#Include %A_ScriptDir%\IME.ahk
-
-SetWorkingDir, %UserProfile%
-
-
 ;; Key remapping
 
 ; Kill F1

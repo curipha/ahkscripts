@@ -22,7 +22,7 @@ Just a my key configuration for general usage.
 
 
 ### my_office.ahk
-AHK scripts used in office.
+AHK scripts used in office. (This script should be used with `my.ahk`.)
 
 - Remap `F1` key to `Esc` key
   - Generally, F1 help is no use ;p

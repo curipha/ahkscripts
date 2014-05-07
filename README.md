@@ -13,12 +13,13 @@ About scripts
 ### my.ahk
 Just a my key configuration for general usage.
 
+- Open Desktop with `Win+E`
+  - Default is My Computer
 - Remap `CapsLock` key to `Tab` key
+  - It is a feature for JIS keyboard
 - Assign `Ctrl+Shift+V` to paste as plain text (paste without any formatting)
 - Remap `Ctrl+D` to `Ctrl+F` on Google Chrome
   - Prevent to add a bookmark accidentally
-- Open Desktop in `Win+E`
-  - Default is My Computer
 
 
 ### my_office.ahk
@@ -43,10 +44,12 @@ Front-end of `sapshcut.exe` bundled with SAP GUI.
 If you hit the Ctrl key twice quickly, an form will come out at the upper left of a screen.
 You can enter the command for starting new SAP GUI session.
 
-You can customize the key mapping by changing `keymap` variables in this program.
+You can customize the key mapping by changing `keymap` variables in `sap_launcher.ini.ahk`.
 For more details of customizing of key mapping, see the code.
+Do not forget to install `sap_launcher.ini.ahk` in the same directory as `sap_launcher.ahk`.
+Otherwise, `sap_launcher.ahk` will not start.
 
-To see the current key mapping,  hit `h` on the form.
+To see the current key mapping, hit `h` on the form.
 
 
 Remarks

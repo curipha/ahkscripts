@@ -46,6 +46,7 @@ You can enter the command for starting new SAP GUI session.
 
 You can customize the key mapping by changing `keymap` variables in `sap_launcher.ini.ahk`.
 For more details of customizing of key mapping, see the code.
+
 Do not forget to install `sap_launcher.ini.ahk` in the same directory as `sap_launcher.ahk`.
 Otherwise, `sap_launcher.ahk` will not start.
 

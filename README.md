@@ -52,7 +52,7 @@ To see the current key mapping,  hit `h` on the form.
 Remarks
 -------
 
-`IME.ahk` has been distributed at (eamat @Cabinet)[http://www6.atwiki.jp/eamat/].
+`IME.ahk` has been distributed at [eamat @Cabinet](http://www6.atwiki.jp/eamat/).
 
 The `IME.ahk` file in this repository is the file that I extracted from the original.
 Therefore, it is the same license as the original file.

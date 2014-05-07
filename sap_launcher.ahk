@@ -7,8 +7,6 @@
 #Persistent
 #SingleInstance force
 
-#Hotstring C
-
 SetWorkingDir, %UserProfile%
 
 IfNotExist, %A_ScriptDir%\sap_launcher.ini.ahk

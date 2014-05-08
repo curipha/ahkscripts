@@ -267,7 +267,7 @@ Return
 
 
 Ctrl::
-  If (A_PriorHotkey = A_ThisHotKey && A_TimeSincePriorHotkey < 250 && A_TimeSincePriorHotkey > 80)
+  If (A_PriorHotkey = A_ThisHotKey && A_TimeSincePriorHotkey < 400 && A_TimeSincePriorHotkey > 80)
   {
     IfWinActive, ahk_class AutoHotkeyGUI
     {

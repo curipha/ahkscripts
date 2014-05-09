@@ -33,7 +33,7 @@ OpenSAPConnection(console, user, password = "", language = "")
 {
   sapshcut = C:\Program Files\SAP\FrontEnd\SAPgui\sapshcut.exe
   workdir  = %A_Desktop%
-  deflang  = JA
+  deflang  = EN
 
   IfNotInString, console, /
     Abort("The first argument of OpenSAPConnection should be a string which concatenates SID and client with a slash.")

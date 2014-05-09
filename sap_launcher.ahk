@@ -28,14 +28,14 @@ Abort(msg)
 }
 ;}}}
 ; OpenSAPConnection {{{
-;  %console% = %system%/%client%|%command% (%system%/%client% is required.)
+;  %console% = %system%/%client%|%command% (%system%/%client% is mandatory.)
 OpenSAPConnection(console, user, password = "", language = "JA")
 {
   sapshcut = C:\Program Files\SAP\FrontEnd\SAPgui\sapshcut.exe
   workdir  = %A_Desktop%
 
   IfNotInString, console, /
-    Abort("Illegal call of OpenSAPConnection")
+    Abort("The first argument of OpenSAPConnection should be a string which concatenates SID and client with a slash.")
 
   cc := console2concmd(console)
   connect := cc["connect"]
@@ -187,8 +187,8 @@ Enter::
 
   StringUpper, Command, Command
 
-  ; Be careful, it is a foward match only. It means "BYEFOOBAR" matches this pattern.
-  ; Only for one character command (e.g. "Q") should be an exact match to avoid an accidential strike.
+  ; Be careful, it is a forward match only. It means "BYEFOOBAR" matches this pattern.
+  ; Only for one character command (e.g. "Q") should be an exact match to avoid an accidental strike.
   If (RegExMatch(Command, "S)^(BYE|EXIT|Q$|QUIT)") > 0)
   {
     ExitApp

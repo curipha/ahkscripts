@@ -226,7 +226,7 @@ Enter::
   {
     connect := key["connect"]
 
-    If (InStr(key["connect"], "|") = 0)
+    IfNotInString, connect, |
       connect .= "|SESSION_MANAGER"
 
 

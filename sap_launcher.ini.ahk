@@ -27,7 +27,7 @@ keymap.PR := { connect: "PRD/100", user: user, language: "EN" }
 ;   - Password is used which will be prompt (it stores on memory)
 ;   - Session language is "EN" (English)
 
-keymap.QA := { connect: "QAS/200|VA01", user: "QA", password: "P@ssw0rd", language: "JA" } }
+keymap.QA := { connect: "QAS/200|VA01", user: "QA", password: "P@ssw0rd", language: "JA" }
 ;   - Hot key is "QA"
 ;   - Sign-in to the system whose SID = "QAS" and client = 200 using username = "QA" and password = "P@ssw0rd"
 ;   - After sign-in, open transaction VA01 immediately

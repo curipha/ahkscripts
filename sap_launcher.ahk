@@ -10,20 +10,14 @@
 SetWorkingDir, %UserProfile%
 
 IfNotExist, %A_ScriptDir%\sap_launcher.ini.ahk
-{
-  MsgBox, 0x30
-        , Error
-        , Cannot find "sap_launcher.ini.ahk".`nYou have to set up this file correctly.
-
-  ExitApp
-}
+  Abort("Cannot find 'sap_launcher.ini.ahk'.`nYou have to set up this file correctly.")
 
 #Include %A_ScriptDir%\sap_launcher.ini.ahk
 
 ; Abort {{{
 Abort(msg)
 {
-  MsgBox, Abort: %msg% ...
+  MsgBox, 0x30, Error, %msg%
   ExitApp
 }
 ;}}}
@@ -105,10 +99,10 @@ connect2syscli(connect)
 ; getpassword {{{
 getpassword()
 {
-  InputBox, password, , Please enter your SAP password:, HIDE, 320, 120
+  InputBox, password, Enter your password, Please enter your SAP password:, HIDE, 320, 120
 
   If (ErrorLevel != 0 or StrLen(password) < 1)
-    Msgbox Cancel or password is empty
+    MsgBox, 0x40, Information, Cancel or password is empty.`nIt does NOT store the password.
 
   Return password
 }
@@ -215,7 +209,7 @@ Enter::
   If (RegExMatch(Command, "S)^(CLEAR|RESET)") > 0)
   {
     password =
-    Msgbox, On-memory password is cleared.
+    MsgBox, 0x40, Information, The password stored in the memory has been cleared.
     Return
   }
 
@@ -223,7 +217,7 @@ Enter::
 
   If (key = "")
   {
-    Msgbox, Unknown command: %Command%
+    MsgBox, 0x30, Unknown command, Unknown command: %Command%
 
     showgui()
   }

@@ -4,7 +4,7 @@
 ; |___/_/ \_\_|   |____\__,_|\_,_|_||_\__|_||_\___|_|   |_|\_\___|\_, |_|_|_\__,_| .__/
 ;                                                                 |__/           |_|
 
-;; Username of SAP (default = Windows logon user id)
+;; Username of SAP (%A_UserName% = Windows logon user id)
 
 user = %A_UserName%
 
@@ -21,11 +21,11 @@ keymap := {}
 
 
 ; Example:
-keymap.PR := { connect: "PRD/100", user: user, language: "EN" }
+keymap.PR := { connect: "PRD/100" }
 ;   - Hot key is "PR"
-;   - Sign-in to the system whose SID = "PRD" and client = 100 using the same username as Windows
-;   - Password is used which will be prompt (it stores on memory)
-;   - Session language is "EN" (English)
+;   - Sign-in to the system whose SID = "PRD" and client = 100 using the username set in above
+;   - Password is used which will be prompt (it stores in memory)
+;   - Session language is default (Default language is "EN" (English))
 
 keymap.QA := { connect: "QAS/200|VA01", user: "QA", password: "P@ssw0rd", language: "JA" }
 ;   - Hot key is "QA"

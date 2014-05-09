@@ -229,6 +229,18 @@ Enter::
       connect .= "|SESSION_MANAGER"
 
 
+    volatileuser =
+
+    If (key["user"] = "")
+    {
+      volatileuser = %user%
+    }
+    Else
+    {
+      volatileuser := key["user"]
+    }
+
+
     volatilepass =
 
     If (key["password"] = "")
@@ -244,7 +256,7 @@ Enter::
     }
 
 
-    OpenSAPConnection(connect, key["user"], volatilepass, key["language"])
+    OpenSAPConnection(connect, volatileuser, volatilepass, key["language"])
   }
 Return
 #IfWinActive

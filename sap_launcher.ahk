@@ -29,10 +29,11 @@ Abort(msg)
 ;}}}
 ; OpenSAPConnection {{{
 ;  %console% = %system%/%client%|%command% (%system%/%client% is mandatory.)
-OpenSAPConnection(console, user, password = "", language = "JA")
+OpenSAPConnection(console, user, password = "", language = "")
 {
   sapshcut = C:\Program Files\SAP\FrontEnd\SAPgui\sapshcut.exe
   workdir  = %A_Desktop%
+  deflang  = JA
 
   IfNotInString, console, /
     Abort("The first argument of OpenSAPConnection should be a string which concatenates SID and client with a slash.")
@@ -44,6 +45,10 @@ OpenSAPConnection(console, user, password = "", language = "JA")
   sc := connect2syscli(connect)
   system := sc["system"]
   client := sc["client"]
+
+  If language =
+    language = %deflang%
+
 
   arg = -system="%system%" -client="%client%" -reuse=1 -workdir="%workdir%" -language="%language%" -user="%user%"
 

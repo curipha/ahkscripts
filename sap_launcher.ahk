@@ -25,7 +25,6 @@ OpenSAPConnection(console, user, password = "", language = "")
 {
   sapshcut = C:\Program Files\SAP\FrontEnd\SAPgui\sapshcut.exe
   workdir  = %A_Desktop%
-  deflang  = EN
 
   c := StrSplit(console, "|")
   connect := c[1]
@@ -35,15 +34,13 @@ OpenSAPConnection(console, user, password = "", language = "")
   system := s[1]
   client := s[2]
 
-  If language =
-    language = %deflang%
+  arg = -system="%system%" -client="%client%" -reuse=1 -workdir="%workdir%" -user="%user%"
 
-
-  arg = -system="%system%" -client="%client%" -reuse=1 -workdir="%workdir%" -language="%language%" -user="%user%"
-
-  If password !=
+  If (language != "")
+    arg = %arg% -language="%language%"
+  If (password != "")
     arg = %arg% -pw="%password%"
-  If command !=
+  If (command != "")
     arg = %arg% -command="%command%"
 
   exec = "%sapshcut%" %arg%

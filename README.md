@@ -52,6 +52,10 @@ Otherwise, `sap_launcher.ahk` will not start.
 
 To see the current key mapping, hit `h` on the form.
 
+This script needs AHK_L v1.1.13+.
+It uses `StrSplit` function and this function is introduced in v1.1.13.
+Therefore, this script requires v1.1.13 and over.
+
 
 Remarks
 -------

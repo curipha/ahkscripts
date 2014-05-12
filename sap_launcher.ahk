@@ -190,7 +190,8 @@ Enter::
     IfNotInString, connect, |
       connect .= "|SESSION_MANAGER"
 
-    s_user := (key["user"] = "") ? user : key["user"]
+    s_user := (key["user"] = "")      ? user     : key["user"]
+    s_lang := (key["language"] = "" ) ? language : key["language"]
 
     If (key["password"] = "")
     {
@@ -204,7 +205,7 @@ Enter::
       s_pass := key["password"]
     }
 
-    OpenSAPConnection(connect, s_user, s_pass, key["language"])
+    OpenSAPConnection(connect, s_user, s_pass, s_lang)
   }
 Return
 #IfWinActive

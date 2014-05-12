@@ -15,12 +15,24 @@ user = %A_UserName%
 password =
 
 
+;; Default language of SAP
+;  * If you set "language" in keymapping, it overrides this value.
+
+language = EN
+
+
 ;; Keymapping
 
 keymap := {}
 
 
+; You can set "connect", "user", "password" and "language" for each keymap.
+; Only "connect" is mandatory and others are optional.
+; "user" and/or "language" should be specified when it is different from default you set above.
+
+
 ; Example:
+
 keymap.PR := { connect: "PRD/100" }
 ;   - Hot key is "PR"
 ;   - Sign-in to the system whose SID = "PRD" and client = 100 using the username set in above

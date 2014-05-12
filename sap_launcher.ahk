@@ -62,7 +62,7 @@ getpassword()
 }
 ;}}}
 ; showhelp {{{
-showhelp(map)
+showhelp(map, defuser, deflang)
 {
   mykeym =
 
@@ -72,13 +72,12 @@ showhelp(map)
     u := v["user"]
     l := v["language"]
 
-;   mykeym = %mykeym%`n* %c% (%u%)
-    mykeym = %mykeym%`n* %c% @%u%
+    If (u = "")
+      u = %defuser%
+    If (l = "")
+      l = %deflang%
 
-    If (l != "")
-      mykeym = %mykeym% (%l%)
-
-    mykeym = %mykeym% : %k%
+    mykeym = %mykeym%`n* %c% @%u% (%l%) : %k%
   }
 
   Msgbox, 
@@ -156,7 +155,7 @@ Enter::
 
   If (RegExMatch(Command, "S)^(H$|HELP)") > 0)
   {
-    showhelp(keymap)
+    showhelp(keymap, user, language)
     Return
   }
 

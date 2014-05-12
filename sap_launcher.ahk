@@ -10,17 +10,15 @@
 SetWorkingDir, %UserProfile%
 
 IfNotExist, %A_ScriptDir%\sap_launcher.ini.ahk
-  Abort("Cannot find 'sap_launcher.ini.ahk'.`nYou have to set up this file correctly.")
+{
+  MsgBox, 0x10
+        , Error
+        , Cannot find "sap_launcher.ini.ahk".`nYou have to set up this file correctly.
+  ExitApp
+}
 
 #Include *i %A_ScriptDir%\sap_launcher.ini.ahk
 
-; Abort {{{
-Abort(msg)
-{
-  MsgBox, 0x30, Error, %msg%
-  ExitApp
-}
-;}}}
 ; OpenSAPConnection {{{
 ;  %console% = %system%/%client%|%command% (%system%/%client% is mandatory.)
 OpenSAPConnection(console, user, password = "", language = "")
@@ -28,9 +26,6 @@ OpenSAPConnection(console, user, password = "", language = "")
   sapshcut = C:\Program Files\SAP\FrontEnd\SAPgui\sapshcut.exe
   workdir  = %A_Desktop%
   deflang  = EN
-
-  IfNotInString, console, /
-    Abort("The first argument of OpenSAPConnection should be a string which concatenates SID and client with a slash.")
 
   cc := console2concmd(console)
   connect := cc["connect"]
@@ -225,9 +220,16 @@ Enter::
   {
     connect := key["connect"]
 
+    IfNotInString, connect, /
+    {
+      MsgBox, 0x30
+            , Misconfiguration
+            , The "connect" string for keymap "%Command%" should be a string which concatenates SID and client with a slash.
+      Return
+    }
+
     IfNotInString, connect, |
       connect .= "|SESSION_MANAGER"
-
 
     volatileuser =
 

@@ -12,7 +12,7 @@ SetWorkingDir, %UserProfile%
 IfNotExist, %A_ScriptDir%\sap_launcher.ini.ahk
   Abort("Cannot find 'sap_launcher.ini.ahk'.`nYou have to set up this file correctly.")
 
-#Include %A_ScriptDir%\sap_launcher.ini.ahk
+#Include *i %A_ScriptDir%\sap_launcher.ini.ahk
 
 ; Abort {{{
 Abort(msg)

@@ -27,13 +27,13 @@ OpenSAPConnection(console, user, password = "", language = "")
   workdir  = %A_Desktop%
   deflang  = EN
 
-  cc := console2concmd(console)
-  connect := cc["connect"]
-  command := cc["command"]
+  c := StrSplit(console, "|")
+  connect := c[1]
+  command := c[2]
 
-  sc := connect2syscli(connect)
-  system := sc["system"]
-  client := sc["client"]
+  s := StrSplit(connect, "/")
+  system := s[1]
+  client := s[2]
 
   If language =
     language = %deflang%
@@ -50,44 +50,6 @@ OpenSAPConnection(console, user, password = "", language = "")
 
   Run, %exec%
   Sleep, 800
-}
-;}}}
-; console2concmd {{{
-console2concmd(console)
-{
-  IfInString, console, |
-  {
-    StringSplit, console_a, console, |
-
-    connect := Trim(console_a1)
-    command := Trim(console_a2)
-  }
-  Else
-  {
-    connect := Trim(console)
-    command := ""
-  }
-
-  Return { "connect": connect, "command": command }
-}
-;}}}
-; connect2syscli {{{
-connect2syscli(connect)
-{
-  IfInString, connect, /
-  {
-    StringSplit, connect_a, connect, /
-
-    system := Trim(connect_a1)
-    client := Trim(connect_a2)
-  }
-  Else
-  {
-    system := Trim(connect)
-    client := ""
-  }
-
-  Return { "system": system, "client": client }
 }
 ;}}}
 
@@ -208,12 +170,12 @@ Enter::
     Return
   }
 
+
   key := keymap[Command]
 
   If (key = "")
   {
     MsgBox, 0x30, Unknown command, Unknown command: %Command%
-
     showgui()
   }
   Else
@@ -283,13 +245,9 @@ Ctrl::
   If (A_PriorHotkey = A_ThisHotKey && A_TimeSincePriorHotkey < 400 && A_TimeSincePriorHotkey > 80)
   {
     IfWinActive, ahk_class AutoHotkeyGUI
-    {
       hidegui()
-    }
     Else
-    {
       showgui()
-    }
   }
 
   KeyWait, Ctrl

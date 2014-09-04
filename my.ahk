@@ -54,6 +54,7 @@ Return
 ; Google Chrome
 #IfWinActive ahk_class Chrome_WidgetWin_1
 ^d::^f
+^+p::^+n
 #IfWinActive
 
 ;}}}

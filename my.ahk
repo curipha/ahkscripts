@@ -55,6 +55,11 @@ Return
 #IfWinActive ahk_class Chrome_WidgetWin_1
 ^d::^f
 ^+p::^+n
+
+^l::
+  IME_SET(0)
+  Send, ^l
+Return
 #IfWinActive
 
 ;}}}

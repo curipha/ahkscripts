@@ -28,10 +28,7 @@ F1::F1
 ^/::
   Send, ^/
 
-  If (IME_GET() = 1) {
-    IME_SET(0)
-  }
-
+  IME_SET(0)
   Send, /
 Return
 
@@ -50,10 +47,7 @@ Return
 #IfWinActive ahk_class SWT_Window0
 ; Direct assign Shift + -
 ^-::
-  If (IME_GET() = 1) {
-    IME_SET(0)
-  }
-
+  IME_SET(0)
   Send, +{NumpadSub}
 Return
 

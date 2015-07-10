@@ -32,6 +32,13 @@ F1::F1
   Send, /
 Return
 
+; Ctrl + Q
+^q::
+  Send, ^/
+
+  IME_SET(0)
+  Send, /nex{Enter}
+Return
 
 ; VD03 w/o org proposal
 :?:nvd03::nvd03 RF02D-VKORG=;RF02D-VTWEG=;RF02D-SPART=;

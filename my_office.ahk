@@ -59,7 +59,7 @@ Return
 Return
 
 ; Hotstring
-:C1:br::Best regards,{Enter}Taichi{Enter}
+:C:br::Best regards,{Enter}Taichi{Enter}
 #IfWinActive
 
 ;}}}

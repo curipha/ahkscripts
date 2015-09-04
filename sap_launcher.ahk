@@ -106,7 +106,7 @@ showgui()
   GuiControl, Text, Command, 
   Gui, Show
 
-  SetTimer, AutoHide, -3000
+  SetTimer, AutoHide, -4000
 }
 ;}}}
 ; hidegui {{{

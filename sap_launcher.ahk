@@ -225,15 +225,21 @@ AutoHide:
 Return
 
 
+keyfireable := True
+
 Ctrl::
-  If (A_PriorHotkey = A_ThisHotKey && A_TimeSincePriorHotkey < 400 && A_TimeSincePriorHotkey > 80)
+  If (keyfireable && A_PriorHotkey = A_ThisHotKey && A_TimeSincePriorHotkey < 400 && A_TimeSincePriorHotkey > 80)
   {
     IfWinActive, ahk_class AutoHotkeyGUI
       hidegui()
     Else
       showgui()
-  }
 
-  KeyWait, Ctrl
+    keyfireable := False
+  }
+  Else
+  {
+    keyfireable := True
+  }
 Return
 

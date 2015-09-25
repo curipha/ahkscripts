@@ -171,39 +171,38 @@ Enter::
   If (key = "")
   {
     MsgBox, 0x30, Unknown command, Unknown command: %Command%
+    Return
+  }
+
+  connect := key["connect"]
+
+  IfNotInString, connect, /
+  {
+    MsgBox, 0x30
+          , Misconfiguration
+          , The "connect" string for keymap "%Command%" should be a string which concatenates SID and client with a slash.
+    Return
+  }
+
+  IfNotInString, connect, |
+    connect .= "|SESSION_MANAGER"
+
+  s_user := (key["user"] = "")      ? user     : key["user"]
+  s_lang := (key["language"] = "" ) ? language : key["language"]
+
+  If (key["password"] = "")
+  {
+    If (password = "")
+      password := getpassword()
+
+    s_pass := password
   }
   Else
   {
-    connect := key["connect"]
-
-    IfNotInString, connect, /
-    {
-      MsgBox, 0x30
-            , Misconfiguration
-            , The "connect" string for keymap "%Command%" should be a string which concatenates SID and client with a slash.
-      Return
-    }
-
-    IfNotInString, connect, |
-      connect .= "|SESSION_MANAGER"
-
-    s_user := (key["user"] = "")      ? user     : key["user"]
-    s_lang := (key["language"] = "" ) ? language : key["language"]
-
-    If (key["password"] = "")
-    {
-      If (password = "")
-        password := getpassword()
-
-      s_pass := password
-    }
-    Else
-    {
-      s_pass := key["password"]
-    }
-
-    OpenSAPConnection(connect, s_user, s_pass, s_lang)
+    s_pass := key["password"]
   }
+
+  OpenSAPConnection(connect, s_user, s_pass, s_lang)
 Return
 #IfWinActive
 

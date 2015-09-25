@@ -171,7 +171,6 @@ Enter::
   If (key = "")
   {
     MsgBox, 0x30, Unknown command, Unknown command: %Command%
-    showgui()
   }
   Else
   {

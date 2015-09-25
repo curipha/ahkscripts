@@ -181,6 +181,7 @@ Enter::
     }
   }
 
+
   connect := key["connect"]
 
   IfNotInString, connect, /
@@ -222,7 +223,6 @@ GuiClose:
   hidegui()
 ;  ExitApp
 Return
-
 
 AutoHide:
   hidegui()

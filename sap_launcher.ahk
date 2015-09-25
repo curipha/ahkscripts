@@ -170,8 +170,15 @@ Enter::
 
   If (key = "")
   {
-    MsgBox, 0x30, Unknown command, Unknown command: %Command%
-    Return
+    If (RegExMatch(Command, "S)^([[:alnum:]]{3})([[:digit:]]{3})$", $) > 0)
+    {
+      key := { connect: $1 . "/" . $2 }
+    }
+    Else
+    {
+      MsgBox, 0x30, Unknown command, Unknown command: %Command%
+      Return
+    }
   }
 
   connect := key["connect"]

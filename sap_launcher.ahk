@@ -112,9 +112,8 @@ showgui()
 ; hidegui {{{
 hidegui()
 {
-  Gui, Hide
-
   SetTimer, AutoHide, Off
+  Gui, Hide
 }
 ;}}}
 

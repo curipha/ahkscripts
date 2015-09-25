@@ -140,25 +140,25 @@ Enter::
 
   ; Be careful, it is a forward match only. It means "BYEFOOBAR" matches this pattern.
   ; Only for one character command (e.g. "Q") should be an exact match to avoid an accidental strike.
-  If (RegExMatch(Command, "S)^(BYE|EXIT|Q$|QUIT)") > 0)
+  If (RegExMatch(Command, "S)^(?:BYE|EXIT|Q$|QUIT)") > 0)
   {
     ExitApp
     Return
   }
 
-  If (RegExMatch(Command, "S)^(R$|RE(LOAD|START|BOOT)?)") > 0)
+  If (RegExMatch(Command, "S)^(?:R$|RE(?:LOAD|START|BOOT)?)") > 0)
   {
     Reload
     Return
   }
 
-  If (RegExMatch(Command, "S)^(H$|HELP)") > 0)
+  If (RegExMatch(Command, "S)^(?:H$|HELP)") > 0)
   {
     showhelp(keymap, user, language)
     Return
   }
 
-  If (RegExMatch(Command, "S)^(CLEAR|RESET)") > 0)
+  If (RegExMatch(Command, "S)^(?:CLEAR|RESET)") > 0)
   {
     password =
     MsgBox, 0x40, Information, The password stored in the memory has been cleared.

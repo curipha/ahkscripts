@@ -23,6 +23,7 @@ F1::F1
 ; Application specific {{{
 
 ; SAP GUI
+
 #IfWinActive ahk_class SAP_FRONTEND_SESSION
 ; Ctrl + /
 ^/::
@@ -47,11 +48,13 @@ Return
 ; XD03 w/o org proposal
 :?:nxd03::nxd03 RF02D-VKORG=;RF02D-VTWEG=;RF02D-SPART=;
 :?:oxd03::oxd03 RF02D-VKORG=;RF02D-VTWEG=;RF02D-SPART=;
+
 #IfWinActive
 
 
 ; Lotus Notes
 #IfWinActive ahk_class SWT_Window0
+
 ; Direct assign Shift + -
 ^-::
   IME_SET(0)
@@ -60,6 +63,7 @@ Return
 
 ; Hotstring
 :C:br::Best regards,{Enter}Taichi{Enter}
+
 #IfWinActive
 
 ;}}}

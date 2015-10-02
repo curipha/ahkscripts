@@ -34,7 +34,7 @@ F1::F1
 Return
 
 ; Ctrl + Q
-^q::
+^Q::
   Send, ^/
 
   IME_SET(0)

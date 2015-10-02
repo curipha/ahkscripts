@@ -41,6 +41,15 @@ Return
   Send, /nex{Enter}
 Return
 
+; Ctrl + W
+^W::
+  Send, ^/
+
+  IME_SET(0)
+  Send, /i{Enter}
+Return
+
+
 ; VD03 w/o org proposal
 :?:nvd03::nvd03 RF02D-VKORG=;RF02D-VTWEG=;RF02D-SPART=;
 :?:ovd03::ovd03 RF02D-VKORG=;RF02D-VTWEG=;RF02D-SPART=;

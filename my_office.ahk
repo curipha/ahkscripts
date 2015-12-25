@@ -30,10 +30,8 @@ F1::F1
 
 ; Ctrl + /
 ^/::
-  Send, ^/
-
   IME_SET(0)
-  Send, /
+  Send, ^//
 Return
 
 ; Ctrl + T
@@ -44,18 +42,14 @@ Return
 
 ; Ctrl + Q
 ^Q::
-  Send, ^/
-
   IME_SET(0)
-  Send, /nex{Enter}
+  Send, ^//nex{Enter}
 Return
 
 ; Ctrl + W
 ^W::
-  Send, ^/
-
   IME_SET(0)
-  Send, /i{Enter}
+  Send, ^//i{Enter}
 Return
 
 

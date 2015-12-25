@@ -25,6 +25,9 @@ F1::F1
 ; SAP GUI
 
 #IfWinActive ahk_class SAP_FRONTEND_SESSION
+; Ctrl + R
+^R::F8
+
 ; Ctrl + /
 ^/::
   Send, ^/

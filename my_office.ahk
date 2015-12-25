@@ -36,6 +36,12 @@ F1::F1
   Send, /
 Return
 
+; Ctrl + T
+^T::
+  IME_SET(0)
+  Send, ^//nse16n GD-TAB=;{Enter}
+Return
+
 ; Ctrl + Q
 ^Q::
   Send, ^/

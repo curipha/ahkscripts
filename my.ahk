@@ -20,9 +20,7 @@ SetWorkingDir, %UserProfile%
 Return
 
 ; CapsLock(Eisuu) -> Tab (only for JIS keyboard)
-vkF0sc03A::
-  Send, {Tab}
-Return
+vkF0sc03A::Tab
 
 ; Plain text paste (Ctrl + Shift + V)
 ^+v::

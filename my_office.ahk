@@ -58,6 +58,12 @@ Return
 :?:nxd03::nxd03 RF02D-VKORG=;RF02D-VTWEG=;RF02D-SPART=;
 :?:oxd03::oxd03 RF02D-VKORG=;RF02D-VTWEG=;RF02D-SPART=;
 
+; SE16N/SE16H
+:?:nse16n::nse16h DYNP_CURSOR=GD-TAB;
+:?:ose16n::ose16h DYNP_CURSOR=GD-TAB;
+:?:nse16h::nse16h DYNP_CURSOR=GD-TAB;
+:?:ose16h::ose16h DYNP_CURSOR=GD-TAB;
+
 #IfWinActive
 
 

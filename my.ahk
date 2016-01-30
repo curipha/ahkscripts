@@ -21,7 +21,7 @@ Return
 vkF0sc03A::Tab
 
 ; Plain text paste (Ctrl + Shift + V)
-^+v::
+^+V::
   evclip := ClipboardAll
 
   If (IME_GET() = 1) {
@@ -48,13 +48,13 @@ Return
 #IfWinActive ahk_class Chrome_WidgetWin_1
 
 ; Kill Ctrl + D
-^d::^f
+^D::^f
 
 ; Open Secret mode by same key as Firefox
-^+p::^+n
+^+P::^+n
 
 ; CTRL + L deactivate IME to set search keyword easily
-^l::
+^L::
   IME_SET(0)
   Send, ^l
 Return

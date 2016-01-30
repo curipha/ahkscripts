@@ -10,10 +10,7 @@ F1::Esc
 
 ; exceptions of killing F1 {{{
 ; SAP GUI
-#IfWinActive ahk_class SAP_FRONTEND_SESSION
-F1::F1
-; MFC Dialog (Pop-up window from SAP GUI)
-#IfWinActive ahk_class #32770
+#IfWinActive ahk_exe saplogon.exe
 F1::F1
 #IfWinActive
 ;}}}

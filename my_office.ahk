@@ -3,25 +3,17 @@
 ; / _` | ' \| / / | | ' \  / _ \  _|  _| / _/ -_)
 ; \__,_|_||_|_\_\ |_|_||_| \___/_| |_| |_\__\___|
 
-;; Key mapping {{{
-
 ; Kill F1
 F1::Esc
 
-; exceptions of killing F1 {{{
-; SAP GUI
+; exceptions of killing F1 in SAP GUI
 #IfWinActive ahk_exe saplogon.exe
 F1::F1
 #IfWinActive
-;}}}
 
-;}}}
-
-; Application specific {{{
-
-; SAP GUI
-
+; SAP GUI {{{
 #IfWinActive ahk_class SAP_FRONTEND_SESSION
+
 ; Ctrl + R
 ^R::F8
 
@@ -65,21 +57,20 @@ Return
 :?:ose16h::ose16h DYNP_CURSOR=GD-TAB;
 
 #IfWinActive
+;}}}
 
-
-; Lotus Notes
+; Lotus Notes {{{
 #IfWinActive ahk_class SWT_Window0
 
-; Direct assign Shift + -
+; Shift + - (In JIS keyborad, Shift + - means "=")
 ^-::
   IME_SET(0)
   Send, +{NumpadSub}
 Return
 
-; Hotstring
+; Signature
 :C:br::Best regards,{Enter}Taichi{Enter}
 
 #IfWinActive
-
 ;}}}
 

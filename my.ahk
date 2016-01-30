@@ -12,14 +12,12 @@
 SetWorkingDir, %UserProfile%
 
 
-;; Key mapping {{{
-
 ; Display desktop w/ Win + E
 #e::
   Run, explorer %A_Desktop%
 Return
 
-; CapsLock(Eisuu) -> Tab (only for JIS keyboard)
+; CapsLock -> Tab (only for JIS keyboard)
 vkF0sc03A::Tab
 
 ; Plain text paste (Ctrl + Shift + V)
@@ -45,23 +43,23 @@ vkF0sc03A::Tab
   evclip =
 Return
 
-;}}}
 
-; Application specific {{{
-
-; Google Chrome
+; Google Chrome {{{
 #IfWinActive ahk_class Chrome_WidgetWin_1
+
+; Kill Ctrl + D
 ^d::^f
+
+; Open Secret mode by same key as Firefox
 ^+p::^+n
 
+; CTRL + L deactivate IME to set search keyword easily
 ^l::
   IME_SET(0)
   Send, ^l
 Return
 #IfWinActive
-
 ;}}}
-
 
 #Include *i %A_ScriptDir%\my_office.ahk
 

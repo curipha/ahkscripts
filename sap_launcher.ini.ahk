@@ -4,19 +4,20 @@
 ; |___/_/ \_\_|   |____\__,_|\_,_|_||_\__|_||_\___|_|   |_|\_\___|\_, |_|_|_\__,_| .__/
 ;                                                                 |__/           |_|
 
-;; Username of SAP (%A_UserName% = Windows logon user id)
+;; Username of SAP ( %A_UserName% = Windows logon user id )
 
 user = %A_UserName%
 
 
-;; Password of SAP (commonly used password)
-;  * If kept blank, the password prompt dialog will be displayed.
+;; Password of SAP
+;   * Set commonly used password
+;   * Password prompt dialog will be displayed if left as blank.
 
 password =
 
 
 ;; Default language of SAP
-;  * If you set "language" in keymapping, it overrides this value.
+;   * It can be overridden by "language" key in each keymap.
 
 language = EN
 

@@ -45,3 +45,9 @@ keymap.QA := { connect: "QAS/200|VA01", user: "QA", password: "P@ssw0rd", langua
 ;   - After sign-in, open transaction VA01 immediately
 ;   - Session language is "JA" (Japanese)
 
+keymap.DE := { connect: "DEV/100|*SPRO DYNP_OKCODE=REF_IMG;", password: "DevPass" }
+;   - Hot key is "CF"
+;   - Sign-in to the system whose SID = "DEV" and client = 100 using the username set in above but password = "DevPass"
+;   - After sign-in, open Reference IMG on transaction SPRO immediately
+;   - Session language is default (Default language is "EN" (English))
+

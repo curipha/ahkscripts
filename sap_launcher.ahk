@@ -213,7 +213,18 @@ Enter::
     s_pass := key["password"]
   }
 
-  OpenSAPConnection(s_system, s_client, s_command, s_user, s_pass, s_lang)
+  s_reuse = 1
+  If (maxsession > 0)
+  {
+    SetTitleMatchMode, RegEx
+    WinGet, sessions, Count, ^%s_system%\(\d+\)\/%s_client%\b ahk_class \ASAP_FRONTEND_SESSION\z
+    SetTitleMatchMode, 1
+
+    If (sessions >= maxsession)
+      s_reuse = 0
+  }
+
+  OpenSAPConnection(s_system, s_client, s_command, s_user, s_pass, s_lang, s_reuse)
 Return
 #IfWinActive
 

@@ -22,6 +22,14 @@ password =
 language = EN
 
 
+;; Max session
+;   * Check the number of sessions to avoid session number limit by opening **new** session.
+;   * In case of 0, the feature is disabled.
+;   * It needs to display a system name in a taskbar. (Option -> Interaction design -> Visualization 2)
+
+maxsession = 6
+
+
 ;; Keymapping
 
 keymap := {}

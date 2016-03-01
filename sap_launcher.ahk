@@ -20,19 +20,10 @@ IfNotExist, %A_ScriptDir%\sap_launcher.ini.ahk
 #Include *i %A_ScriptDir%\sap_launcher.ini.ahk
 
 ; OpenSAPConnection {{{
-;  %console% = %system%/%client%|%command% (%system%/%client% is mandatory.)
-OpenSAPConnection(console, user, password = "", language = "")
+OpenSAPConnection(system, client, command, user, password = "", language = "")
 {
   sapshcut = C:\Program Files\SAP\FrontEnd\SAPgui\sapshcut.exe
   workdir  = %A_Desktop%
-
-  c := StrSplit(console, "|")
-  connect := c[1]
-  command := c[2]
-
-  s := StrSplit(connect, "/")
-  system := s[1]
-  client := s[2]
 
   arg = -system="%system%" -client="%client%" -reuse=1 -workdir="%workdir%" -user="%user%"
 
@@ -172,7 +163,9 @@ Enter::
   {
     If (RegExMatch(Command, "S)^([[:alnum:]]{3})([[:digit:]]{3})$", $) > 0)
     {
-      key := { connect: $1 . "/" . $2 }
+      s_system  := $1
+      s_client  := $2
+      s_command := "SESSION_MANAGER"
     }
     Else
     {
@@ -180,20 +173,30 @@ Enter::
       Return
     }
   }
-
-
-  connect := key["connect"]
-
-  IfNotInString, connect, /
+  Else
   {
-    MsgBox, 0x30
-          , Misconfiguration
-          , The "connect" string for keymap "%Command%" should be a string which concatenates SID and client with a slash.
-    Return
-  }
+;   %connect% = %system%/%client%|%command% (%system%/%client% is mandatory.)
+    connect := key["connect"]
 
-  IfNotInString, connect, |
-    connect .= "|SESSION_MANAGER"
+    IfNotInString, connect, /
+    {
+      MsgBox, 0x30
+            , Misconfiguration
+            , The "connect" string for keymap "%Command%" should be a string which concatenates SID and client with a slash.
+      Return
+    }
+
+    IfNotInString, connect, |
+      connect .= "|SESSION_MANAGER"
+
+    c := StrSplit(connect, "|")
+    server    := c[1]
+    s_command := c[2]
+
+    s := StrSplit(server, "/")
+    s_system := s[1]
+    s_client := s[2]
+  }
 
   s_user := (key["user"] = "")      ? user     : key["user"]
   s_lang := (key["language"] = "" ) ? language : key["language"]
@@ -210,7 +213,7 @@ Enter::
     s_pass := key["password"]
   }
 
-  OpenSAPConnection(connect, s_user, s_pass, s_lang)
+  OpenSAPConnection(s_system, s_client, s_command, s_user, s_pass, s_lang)
 Return
 #IfWinActive
 

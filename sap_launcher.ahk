@@ -20,12 +20,12 @@ IfNotExist, %A_ScriptDir%\sap_launcher.ini.ahk
 #Include *i %A_ScriptDir%\sap_launcher.ini.ahk
 
 ; OpenSAPConnection {{{
-OpenSAPConnection(system, client, command, user, password = "", language = "")
+OpenSAPConnection(system, client, command, user, password = "", language = "", reuse = "1")
 {
   sapshcut = C:\Program Files\SAP\FrontEnd\SAPgui\sapshcut.exe
   workdir  = %A_Desktop%
 
-  arg = -system="%system%" -client="%client%" -reuse=1 -workdir="%workdir%" -user="%user%"
+  arg = -system="%system%" -client="%client%" -reuse="%reuse%" -workdir="%workdir%" -user="%user%"
 
   If (language != "")
     arg = %arg% -language="%language%"

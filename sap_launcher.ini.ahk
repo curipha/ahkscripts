@@ -10,7 +10,7 @@ user = %A_UserName%
 
 
 ;; Password of SAP
-;   * Set commonly used password
+;   * Set commonly used password.
 ;   * Password prompt dialog will be displayed if left as blank.
 
 password =

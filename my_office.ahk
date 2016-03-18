@@ -23,6 +23,30 @@ F1::F1
   Send, ^//
 Return
 
+; Ctrl + O
+^O::
+  If (A_PriorHotkey == "^/" && A_TimeSincePriorHotkey < 3200)
+  {
+    IME_SET(0)
+    Send, o
+  }
+  Else
+  {
+    Send, ^o
+  }
+Return
+; Ctrl + N
+^N::
+  If (A_PriorHotkey == "^/" && A_TimeSincePriorHotkey < 3200)
+  {
+    IME_SET(0)
+    Send, n
+  }
+  Else
+  {
+    Send, ^n
+  }
+Return
 
 ; Ctrl + Q
 ^Q::

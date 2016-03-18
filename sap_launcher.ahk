@@ -245,8 +245,8 @@ Return
 
 keyfireable := True
 
-Ctrl::
-  If (keyfireable && A_PriorHotkey = A_ThisHotKey && A_TimeSincePriorHotkey < 400 && A_TimeSincePriorHotkey > 80)
+~Ctrl Up::
+  If (keyfireable && A_PriorHotkey = A_ThisHotKey && A_TimeSincePriorHotkey < 240)
   {
     IfWinActive, ahk_class AutoHotkeyGUI
       hidegui()

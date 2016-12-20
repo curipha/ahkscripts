@@ -245,7 +245,7 @@ Return
 
 keyfireable := True
 
-~Ctrl Up::
+Ctrl::
   If (keyfireable && A_PriorHotkey = A_ThisHotKey && A_TimeSincePriorHotkey < 240)
   {
     IfWinActive, ahk_class AutoHotkeyGUI

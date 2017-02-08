@@ -12,6 +12,10 @@
 SetWorkingDir, %UserProfile%
 
 
+; Set lockstate
+SetCapsLockState, AlwaysOff
+SetScrollLockState, AlwaysOff
+
 ; Display desktop w/ Win + E
 #e::
   Run, explorer %A_Desktop%

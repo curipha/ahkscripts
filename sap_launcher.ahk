@@ -71,11 +71,8 @@ showhelp(map, defuser, deflang)
     mykeym = %mykeym%`n* %c% @%u% (%l%) : %k%
   }
 
-  Msgbox, 
+  Msgbox, 0x20, SAP Launcher: Help,
 (
- SAP Launcher
-==============
-
 Tip: Command is case-insensitive.
 
 [ User key mappings ]

@@ -83,7 +83,7 @@ Tip: Command is case-insensitive.
 
 [ System key mappings ]
 
-* Exit the application : BYE, EXIT, Q, QUIT
+* Exit the application : BYE, EXIT, QUIT
 * Restart the application : R, RE, RELOAD, RESTART, REBOOT
 * Show this help: H, HELP
 * Clear registered password: CLEAR, RESET
@@ -130,8 +130,8 @@ Enter::
   StringUpper, Command, Command
 
   ; Be careful, it is a forward match only. It means "BYEFOOBAR" matches this pattern.
-  ; Only for one character command (e.g. "Q") should be an exact match to avoid an accidental strike.
-  If (RegExMatch(Command, "S)^(?:BYE|EXIT|Q$|QUIT)") > 0)
+  ; Only for one character command (e.g. "R") should be an exact match to avoid an accidental strike.
+  If (RegExMatch(Command, "S)^(?:BYE|EXIT|QUIT)") > 0)
   {
     ExitApp
     Return

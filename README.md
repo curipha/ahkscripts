@@ -13,25 +13,25 @@ About scripts
 ### my.ahk
 Just a my key configuration for general usage.
 
-- Open Desktop with `Win+E`
+- Open Desktop with <kbd>Win+E</kbd>
   - Default is My Computer
-- Remap `CapsLock` key to `Tab` key
+- Remap <kbd>CapsLock</kbd> key to <kbd>Tab</kbd> key
   - It is a feature for JIS keyboard
-- Assign `Ctrl+Shift+V` to paste as plain text (paste without any formatting)
-- Remap `Ctrl+D` to `Ctrl+F` on Google Chrome
+- Assign <kbd>Ctrl+Shift+V</kbd> to paste as plain text (paste without any formatting)
+- Remap <kbd>Ctrl+D</kbd> to <kbd>Ctrl+F</kbd> on Google Chrome
   - Prevent to add a bookmark accidentally
 
 
 ### my_office.ahk
 AHK scripts used in office. (This script should be used with `my.ahk`.)
 
-- Remap `F1` key to `Esc` key
-  - Generally, F1 help is no use ;p
+- Remap <kbd>F1</kbd> key to <kbd>Esc</kbd> key
+  - Generally, <kbd>F1</kbd> help is no use ;p
   - ... except for SAP GUI
-- Remap `Ctrl+/` to `Ctrl+/` + `/` on SAP GUI
+- Remap <kbd>Ctrl+/</kbd> to <kbd>Ctrl+/</kbd> + <kbd>/</kbd> on SAP GUI
   - A little hack
-- Workaround for impossible to enter `Shift+-` in JIS keyboard on Lotus Notes
-  - On JIS keyboard, `Shift+-` means just `=`
+- Workaround for impossible to enter <kbd>Shift+-</kbd> in JIS keyboard on Lotus Notes
+  - On JIS keyboard, <kbd>Shift+-</kbd> means just <kbd>=</kbd>
 
 SAP is an Enterprise Resource Planning software by SAP AG.
 Notes (a.k.a. Lotus Notes) is a Collaborative software by IBM.
@@ -50,7 +50,7 @@ For more details of customizing of key mapping, see the code.
 Do not forget to install `sap_launcher.ini.ahk` in the same directory as `sap_launcher.ahk`.
 Otherwise, `sap_launcher.ahk` will not start.
 
-To see the current key mapping, hit `h` on the form.
+To see the current key mapping, hit <kbd>h</kbd> on the form.
 
 This script needs AHK_L v1.1.13+.
 It uses `StrSplit` function and this function is introduced in v1.1.13.

@@ -1,7 +1,6 @@
 ahkscripts
 ==========
-AutoHotkey scripts for AutoHotkey_L (Unicode).
-Not works on AutoHotkey.
+AutoHotkey scripts for AutoHotkey (Unicode).
 
 
 About scripts
@@ -44,10 +43,6 @@ Otherwise, `sap_launcher.ahk` will not start.
 
 To see the current key mapping, hit <kbd>h</kbd> on the form.
 
-This script needs AHK_L v1.1.13+.
-It uses `StrSplit` function and this function is introduced in v1.1.13.
-Therefore, this script requires v1.1.13 and over.
-
 
 Remarks
 -------
@@ -60,6 +55,6 @@ Therefore, it is the same license as the original file.
 
 Links
 -----
-- AutoHotkey_L Download http://ahkscript.org/download/
+- AutoHotkey Download https://autohotkey.com/download/
 - AutoHotkey Wiki (Japanese) http://ahkwiki.net/
 

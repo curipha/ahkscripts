@@ -22,7 +22,7 @@ SetScrollLockState, AlwaysOff
 Return
 
 ; CapsLock -> Tab (only for JIS keyboard)
-vkF0sc03A::Tab
+vkF0::Tab
 
 ; Plain text paste (Ctrl + Shift + V)
 ^+V::

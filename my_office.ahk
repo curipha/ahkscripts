@@ -79,7 +79,7 @@ Return
 ;}}}
 
 ; Lotus Notes {{{
-#IfWinActive ahk_class SWT_Window0
+#If WinActive("ahk_class SWT_Window0") || WinActive("ahk_class NOTES")
 
 ; Shift + - (In JIS keyborad, Shift + - means "=")
 ^-::

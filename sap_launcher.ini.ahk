@@ -59,4 +59,3 @@ keymap.DE := { connect: "DEV/100|*SPRO DYNP_OKCODE=REF_IMG;", password: "DevPass
 ;   - Sign-in to the system whose SID = "DEV" and client = 100 using the username set in above but password = "DevPass"
 ;   - After sign-in, open Reference IMG on transaction SPRO immediately
 ;   - Session language is default (Default language is "EN" (English))
-

@@ -51,4 +51,3 @@ IME_SET(SetSts, WinTitle="A") {
     ,  Int, 0x006   ;wParam  : IMC_SETOPENSTATUS
     ,  Int, SetSts) ;lParam  : 0 or 1
 }
-

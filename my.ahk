@@ -16,9 +16,8 @@ SetWorkingDir %A_ScriptDir%
 
 ; Set lockstate
 SetCapsLockState, AlwaysOff
-SetScrollLockState, AlwaysOff
-
 SetNumLockState, AlwaysOn
+SetScrollLockState, AlwaysOff
 
 ; Display desktop w/ Win + E
 #e::

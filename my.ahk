@@ -10,11 +10,9 @@
 #SingleInstance force
 
 SendMode Input
+SetWorkingDir %A_ScriptDir%
 
 #Include %A_ScriptDir%\IME.ahk
-
-SetWorkingDir, %UserProfile%
-
 
 ; Set lockstate
 SetCapsLockState, AlwaysOff

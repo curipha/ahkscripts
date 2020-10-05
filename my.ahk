@@ -4,8 +4,12 @@
 ; \__,_|_||_|_\_\
 
 ;; Preferences
+#NoEnv
+#Warn
 #Persistent
 #SingleInstance force
+
+SendMode Input
 
 #Include %A_ScriptDir%\IME.ahk
 

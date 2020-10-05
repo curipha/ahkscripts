@@ -34,14 +34,15 @@ vkF0::Tab
 ; Kill Ctrl + D
 ^D::^f
 
-; Open Secret mode by same key as Firefox
+; Open incognito mode in the same key as Firefox
 ^+P::^+n
 
-; CTRL + L deactivate IME to set search keyword easily
+; Deactivate IME when editing URI
 ^L::
   IME_SET(0)
   Send, ^l
 Return
+
 #IfWinActive
 ;}}}
 
